@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Course Details</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td style="vertical-align: top;">
+      <ul>
+        <li><a href="#">Account</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Inbox</a></li>
+        <li><a href="#">History</a></li>
+        <li><a href="#">Studio</a></li>
+        <li><a href="#">Commons</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </td>
+    <td style="vertical-align: top;">
+      <ul>
+        <li><a href="./home.html">Home</a></li>
+        <li><a href="#">Modules</a></li>
+        <li><a href="#">Piazza</a></li>
+        <li><a href="#">Zoom Meetings</a></li>
+        <li><a href="./assignments/index.html">Assignments</a></li>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="./grades.html">Grades</a></li>
+        <li><a href="#">People</a></li>
+        <li><a href="#">Panopto Video</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Announcements</a></li>
+        <li><a href="#">Pages</a></li>
+        <li><a href="#">Files</a></li>
+        <li><a href="#">Rubrics</a></li>
+        <li><a href="#">Outcomes</a></li>
+        <li><a href="#">Collaborations</a></li>
+        <li><a href="#">Syllabus</a></li>
+        <li><a href="./courseDetails.html">Settings</a></li>
+      </ul>
+    </td>
+    <td style="vertical-align: top;">
+      <a href="./courseDetails.html">Course Details</a>
+      <a href="#">Sections</a>
+      <a href="./courseNavigation.html">Navigation</a>
+      <a href="#">Apps</a>
+      <a href="#">Feature Options</a>
+      <a href="#">Integrations</a>
+      <hr>
+      <h2>Course Details</h2>
+      <label><b>Image</b></label>
+      <label><b>Name: </b></label> Web Development Fall 2023<br>
+      <label><b>Course Code: </b></label> CS4550.12631.202410<br>
+      <label><b>Blueprint Course: </b></label> No<br>
+      <label><b>Course Template: </b></label>
+      <input type="checkbox"> Enable course as a Course Template <br>
+      <label><b>Time Zone: </b></label>
+      <select name="timeZone">
+        <option value="timeZone">Eastern Time (US & Canada)</option>
+      </select><br>
+      <label><b>SIS ID: </b></label> CS4550.12631.202410<br>
+      <label><b>Subaccount: </b></label> CS Grad<br>
+      <label><b>Term: </b></label> Fall 2023 Semester Full Term<br>
+      <label><b>Participation: </b></label> <select name="participation">
+      <option value="term">Term</option>
+      </select>
+      <p>Course participation is limited to <b>term</b> start and end dates</p>
+      <label><b>Start: </b></label> <input type="date"><br>
+      <label><b>End: </b></label> <input type="date"><br>
+      <input type="checkbox"> Restrict users from viewing course before term start date.<br>
+      <input type="checkbox"> Restrict users from viewing course before term end date.<br>
+      <label><b>Default due time: </b></label><select name="dueTime">
+      <option value="default">Account default(11:59pm)</option>
+      </select>
+      <p>This influences the user interface for setting due dates. It does not change the time due for any existing assignments.</p>
+      <label><b>Language: </b></label><select name="language">
+      <option value="notSet">Not Set(user-configurable, defaults to English)</option>
+      </select>
+      <p>This will override any user/system language preferences. This is only recommended for foreign language courses.</p>
+      <label><b>File Storage: </b></label> 100000 megabytes<br>
+      <label><b>Large Course: </b></label> <input type="checkbox"> Launch SpeedGrader Filtered by Student Group<br>
+      <label><b>Grading scheme: </b></label> <input type="checkbox"> Enable course grading scheme <br>
+      <label><b>License: </b></label> <select name="license">
+      <option value="private">Private (Copyrighted)</option>
+      </select><br>
+      <label><b>File Copyright: </b></label> <input type="checkbox"> Copyright and license information must be provided for files
+      before they are published<br>
+      <label><b>Visibility: </b></label> If you need to make your course public contact your admin/support.<br>
+      <select name="visibility">
+        <option value="course">Course</option>
+      </select>
+      <input type="checkbox"> Include this course in the public course index.<br>
+      <label><b>Format: </b></label> <select name="format">
+      <option value="onCampus">On-Campus</option>
+      </select><br>
+      <label><b>Mastery Paths: </b></label> <input type="checkbox"> Enable individual learning paths for students based on assessment. <br>
+      <label><b>Description: </b></label> <textarea></textarea><br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
