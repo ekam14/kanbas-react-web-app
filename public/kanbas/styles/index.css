@@ -1,0 +1,96 @@
+body {
+    font-family: "Lato Extended","Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+@media (max-width: 767px) {
+    .main-navbar {
+        height: 60px; /* Set a different height for screens smaller than "sm" */
+    }
+}
+
+@media screen and (min-width: 580px) {
+    .home-main-content {
+        margin-left: 12px;
+    }
+}
+
+.main-navbar {
+    position: fixed;
+    background-color: black;
+    width: 80px;
+    height: 100%;
+}
+
+.main-navbar .nav-link:hover {
+    background-color: white;
+    color: red !important;
+}
+
+.main-navbar .nav-item {
+    margin: 8px 0;
+}
+
+.main-navbar .nav-link {
+    padding: 8px;
+    font-size: 12px;
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+.main-navbar .nav-link.active {
+    background-color: white !important;
+    color: red !important;
+}
+
+.main-navbar i {
+    text-align: center;
+    font-size: 30px;
+    color: red;
+}
+
+.logo {
+    height: 5rem;
+    width: 5rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.active {
+    background-color: white;
+    color: red;
+}
+
+.fa-solid {
+    align-items: center;
+}
+
+.main-navbar .no-border {
+    border: none;
+    width: 200px
+}
+
+.list-group-item {
+    border: none;
+}
+
+.active-item a {
+    color: black;
+    padding: 5px;
+    border-left: 3px solid black;
+}
+
+.btn-gray {
+    background-color: #F2F3F4;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+.list-group-item a i {
+    margin-left: 10px;
+    color: black;
+    float: right;
+}

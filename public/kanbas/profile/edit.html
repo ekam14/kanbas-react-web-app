@@ -5,81 +5,210 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../styles/index.css">
   <title>Edit Profile</title>
+
+  <style>
+    a {
+      color: red;
+      text-decoration: none;
+    }
+
+    .oval-container {
+      width: 120px;
+      height: 120px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #A9A9A9;
+      border: 1px black solid;
+      margin-bottom: 20px;
+    }
+
+    .btn-gray {
+      background-color: #F2F3F4;
+    }
+
+    .fa-user {
+      font-size: 90px;
+    }
+
+    .personal-data {
+      margin: 20px 0;
+    }
+  </style>
+
 </head>
 <body>
-<table>
-  <tr>
-    <td style="vertical-align: top;">
-      <ul>
-        <li><a href="./edit.html">Account</a></li>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="../column2.html">Courses</a></li>
-        <li><a href="#">Calendar</a></li>
-        <li><a href="#">Inbox</a></li>
-        <li><a href="#">History</a></li>
-        <li><a href="#">Studio</a></li>
-        <li><a href="#">Commons</a></li>
-        <li><a href="#">Help</a></li>
-      </ul>
-    </td>
-    <td style="vertical-align: top;">
-      <ul>
-        <li><a href="#">Notifications</a></li>
-        <li><a href="./index.html">Profile</a></li>
-        <li><a href="#">Files</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">ePortfolios</a></li>
-        <li><a href="#">Shared Content</a></li>
-        <li><a href="#">The Hub</a></li>
-        <li><a href="#">Qwickly Course Tools</a></li>
-        <li><a href="#">Global Announcement</a></li>
-      </ul>
-    </td>
-    <td style="vertical-align: top;">
-      <h3>Ekam Singh</h3>
-      <label>Name:*</label>
-      <input type="text" value="Ekam Singh"/>
-      <label>Pronouns:</label>
-      <select name="pronouns">
-        <option value="none">None</option>
-      </select>
-      <br><br>
-      <label>Title:</label>
-      <input type="text" />
-      <h4>Contact</h4>
-      <p>No registered services, you could some on the <a href="#">settings</a> page.</p>
-      <h4>Contact</h4>
-      <p>No registered services, you could some on the <a href="#">settings</a> page.</p>
-      <h4>Biography</h4>
-      <p>Student.</p>
-      <textarea>Student.</textarea>
-      <br>
-      <h4>Links</h4>
-      <ul>
-        <li><a href="https://www.youtube.com">YouTube</a>
-          <i class="fa fa-external-link"></i>
-          <a href="#" style="text-decoration: none">Links to an external site.</a></li>
-      </ul>
-      <label><b>Title</b></label>
-      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      <label><b>URL</b></label>
-      <br>
-      <input type="text" value="YouTube">
-      <i class="fa fa-long-arrow-right"></i>
-      <input type="text" value="https://www.youtube.com"><a href="#">Remove</a>
-      <br>
-      <button>Add Another Link</button>
-      <br>
-      <button><a href="./profile.html">Cancel</a></button>
-      <button><a href="./profile.html">Save Profile</a></button>
-      <br>
-      <button><a href="#">Edit Profile</a></button>
-      <button><a href="./profile.html">Cancel Editing</a></button>
-    </td>
-  </tr>
-</table>
+<div class="fluid-container">
+  <div class="row">
+    <div class="col-1">
+      <nav class="main-navbar navbar navbar-expand-lg">
+        <div class="fluid-container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav flex-column">
+              <li class="nav-item">
+                <img class="logo" src="../imgs/north.png">
+              </li>
+              <li class="nav-item active">
+                <div class="white-selected">
+                  <a href="../profile/index.html" class="nav-link">
+                    <i class="fa-solid fa-user" style="color: grey;"></i>
+                    <br />
+                    <span style="color: red;">Account</span>
+                  </a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="../dashboard/index.html" class="nav-link">
+                  <i class="fa-solid fa-gauge"></i>
+                  <br />
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li class="nav-item">
+
+                <a href="../column2.html" class="nav-link">
+                  <i class="fa-solid fa-book"></i>
+                  <br />
+                  <span>Courses</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa-regular fa-calendar-days"></i>
+                  <br />
+                  <span>Calendar</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa-solid fa-inbox"></i>
+                  <br />
+                  <span>Inbox</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa-solid fa-clock"></i>
+                  <br />
+                  <span>History</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa-solid fa-network-wired"></i>
+                  <br />
+                  <span>Studio</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-sign-out" aria-hidden="true"></i> <br />
+                  <span>Commons</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa-solid fa-question"></i>
+                  <br />
+                  <span>Help</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="row col-10">
+      <div class="input-group m-2 fs-5">
+        <i class="fa-solid fa-bars mx-3 mt-1" style="color: red"></i>
+        <p class="mx-3 text-muted">Ekam Singh's Profile</p>
+      </div>
+      <hr>
+      <div class="col-3">
+        <ul class="list-group no-border">
+          <li class="list-group-item"><a href="#">Notifications</a></li>
+          <li class="list-group-item active-item"><a href="./profile.html">Profile</a></li>
+          <li class="list-group-item"><a href="#">Files</a></li>
+          <li class="list-group-item"><a href="#">Settings</a></li>
+          <li class="list-group-item"><a href="#">ePortfolios</a></li>
+          <li class="list-group-item"><a href="#">Shared Content</a></li>
+          <li class="list-group-item"><a href="#">The Hub</a></li>
+          <li class="list-group-item"><a href="#">Qwickly Course Tools</a></li>
+          <li class="list-group-item"><a href="#">Global Announcements</a></li>
+        </ul>
+      </div>
+      <div class="row col-9">
+        <div class="col-8">
+          <div class="oval-container">
+            <i class="fa fa-user fa-4x"></i>
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label"><strong>Name:*</strong></label>
+            <input type="text" class="form-control" id="name" value="Ekam Singh">
+            <label for="name" class="form-label"><strong>Pronouns:</strong></label>
+            <select class="form-select">
+              <option selected>None</option>
+              <option value="1">He/Him</option>
+            </select>
+            <label for="title" class="form-label"><strong>Title:</strong></label>
+            <input type="text" class="form-control" id="title">
+          </div>
+          <br>
+          <div class="personal-data">
+            <h5>Contact</h5>
+            <p>No registered services, you could some on the <a href="#">settings</a> page.</p>
+            <h5>Biography</h5>
+            <textarea>Graduate student.</textarea>
+          </div>
+          <br>
+          <div class="external-links">
+            <h5>Links</h5>
+            <div class="row text-center">
+              <div class="col-6">Title</div>
+              <dic class="col-6">Url</dic>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <input type="text" class="form-control" value="YouTube">
+              </div>
+              <div class="col-1">
+                <i class="fa fa-long-arrow-right"></i>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" value="https://www.youtube.com">
+              </div>
+              <div class="col-1">
+                <a href=""><i class="fa-solid fa-x"></i></a>
+              </div>
+            </div>
+            <button class="mt-1 btn btn-gray">Add Another Link</button>
+          </div>
+          <hr>
+          <div class="float-end">
+            <a class="btn btn-gray" href="./profile.html">Cancel</a>
+            <a class="btn btn-danger" href="./profile.html">Save Profile</a>
+          </div>
+        </div>
+        <div class="col-4">
+          <a href="./profile.html" class="btn btn-gray">
+            <i class="fa fa-pencil fa-rotate-270" aria-hidden="true">
+            </i>
+            Cancel Editing
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
