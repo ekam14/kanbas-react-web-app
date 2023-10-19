@@ -6,6 +6,10 @@
     /*margin: 2px 0;*/
 }
 
+.btn-gray {
+    background-color: #F2F3F4;
+}
+
 .breadcrumb-link a {
     color: black;
 }

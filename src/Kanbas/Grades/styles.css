@@ -2,6 +2,10 @@
     position: relative;
 }
 
+nav {
+    display: inline-block;
+}
+
 .search-icon {
     position: absolute;
     top: 50%;

@@ -9,7 +9,9 @@ function CourseNavigation() {
                    "Settings"];
 
     const { courseId } = useParams();
-    const { pathname } = useLocation();
+    let { pathname } = useLocation();
+
+    pathname = decodeURIComponent(pathname);
 
     return (
         <div className="home-main-content">

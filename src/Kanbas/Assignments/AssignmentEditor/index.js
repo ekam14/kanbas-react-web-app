@@ -23,11 +23,11 @@ function AssignmentEditor(){
     return (
         <div>
             <div className="float-end my-2">
-                    <FontAwesomeIcon className="green-color" icon={faCircleCheck}/>
-                    <label className="green-color">Published</label>
-                    <button className="btn btn-gray mx-3">
-                        <FontAwesomeIcon icon={faEllipsisV}></FontAwesomeIcon>
-                    </button>
+                <FontAwesomeIcon className="green-color" icon={faCircleCheck}/>
+                <label className="green-color">Published</label>
+                <button className="btn btn-gray mx-3">
+                    <FontAwesomeIcon icon={faEllipsisV}></FontAwesomeIcon>
+                </button>
             </div>
             <hr/>
             <div>
