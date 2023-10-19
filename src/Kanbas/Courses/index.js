@@ -43,7 +43,7 @@ function Courses() {
     return (
         <div className="row">
             <div className="breadcrumb-div col-12">
-                <div className="justify-content-between align-items-center my-2">
+                <div className="justify-content-between align-items-center m-2">
                     <Breadcrumb>
                         <FontAwesomeIcon className="mx-3 mt-1" icon={faBars}/>
                         <Breadcrumb.Item href="#">{course.number} FA23</Breadcrumb.Item>
