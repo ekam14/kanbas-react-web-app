@@ -1,0 +1,37 @@
+.blue .backgroundDiv {
+    background-color: #33B5FF;
+    height: 160px;
+}
+
+.blue .card-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #33B5FF;
+}
+
+.dark-blue .backgroundDiv {
+    background-color: #0000CC;
+    height: 160px;
+}
+
+.dark-blue .card-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #0000CC;
+}
+
+.gray .backgroundDiv {
+    background-color: #D3D3D3;
+    height: 160px;
+}
+
+.gray .card-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #D3D3D3;
+}
+
+.card {
+    width: 270px;
+    margin: 15px;
+}

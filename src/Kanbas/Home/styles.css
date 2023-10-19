@@ -1,0 +1,12 @@
+.todo {
+    margin-top: 12px;
+}
+
+.todo .fa-circle {
+    display: inline-block;
+    color: red;
+}
+
+.text-muted {
+    font-size: 12px;
+}
