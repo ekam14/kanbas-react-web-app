@@ -19,7 +19,7 @@ function ModuleList() {
         <div>
             <ul className="list-group">
                 {modules.map((module, index) => (
-                    <div className="module-div">
+                    <div key={index} className="module-div">
                         <li key={index} className="list-group-item list-group-item-action">
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                             <FontAwesomeIcon icon={faEllipsisVertical} />

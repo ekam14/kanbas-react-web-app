@@ -32,15 +32,15 @@ function Assignments() {
                     <span><b>ASSIGNMENTS</b></span>
                 </div>
                 <div className="mb-1 float-end">
-                    <btn className="btn btn-light total">40% of Total</btn>
+                    <button className="btn btn-light total">40% of Total</button>
                     <FontAwesomeIcon className="mx-2" icon={faPlus}/>
                     <FontAwesomeIcon className="mx-3" icon={faEllipsisV}/>
                 </div>
             </div>
             <div className="assignments-section">
                 <ul className="list-group">
-                {courseAssignments.map((assignment) => (
-                    <div className="list-group-item assignment-div">
+                {courseAssignments.map((assignment, index) => (
+                    <div key={index} className="list-group-item assignment-div">
                         <div className="row">
                             <div className="col-1 mt-4">
                                 <span>&#8286;</span>

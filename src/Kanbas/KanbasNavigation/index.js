@@ -28,7 +28,7 @@ function KanbasNavigation() {
                         <ul className="navbar-nav flex-column">
                             <img className="logo" src={Image}  alt={"Northeastern"}/>
                             {links.map((link, index) => (
-                                <li className="nav-item">
+                                <li key={index} className="nav-item">
                                     <Link
                                         key={index}
                                         to={link === "Courses" ? "/Kanbas/Courses/RS101/Home" : `/Kanbas/${link}`}
