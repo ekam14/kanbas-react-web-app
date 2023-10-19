@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CourseNavigation from "../CourseNavigation";
 import {Navigate, Route, Routes} from "react-router";
 import { Breadcrumb } from 'react-bootstrap';
-import {faBars} from "@fortawesome/free-solid-svg-icons";
+import {faBars, faGlasses} from "@fortawesome/free-solid-svg-icons";
 import Modules from "../Modules";
 import Assignments from "../Assignments";
 import AssignmentEditor from "../Assignments/AssignmentEditor";
@@ -12,6 +12,7 @@ import Home from "../Home";
 import db from "../Database";
 
 import './styles.css'
+import React from "react";
 
 function Courses() {
     const { courseId } = useParams();
@@ -19,6 +20,7 @@ function Courses() {
     let { pathname } = useLocation();
     let section = pathname.split("/")
     let subsection = "";
+    let pathnameSubsection = "";
     let el = pathname.split("/");
     section = section[section.length - 1]
 
@@ -28,13 +30,15 @@ function Courses() {
     if(pathname.includes("Assignments") && section !== "Assignments") {
         subsection = "Assignments";
         section = assignment.title;
-        pathname = el.slice(0, el.length - 1).join('/');
+        pathnameSubsection = el.slice(0, el.length - 1).join('/');
     }
 
     if(section === "Home") {
         section = "Modules";
         pathname = el.slice(0, el.length - 1).join('/') + `/${section}`
     }
+
+    section = decodeURIComponent(section);
 
     return (
         <div className="row">
@@ -47,11 +51,19 @@ function Courses() {
                             <span className="mx-2">></span>
                         )}
                         {(subsection.length > 0) && (
-                            <Breadcrumb.Item href={`${pathname}`}>{subsection}</Breadcrumb.Item>
+                            <Breadcrumb.Item href={`${pathnameSubsection}`}>{subsection}</Breadcrumb.Item>
                         )}
                         <span className="mx-2">></span>
                         <Breadcrumb.Item className="breadcrumb-link" href={`${pathname}`}>{section}</Breadcrumb.Item>
                     </Breadcrumb>
+                    {(section === "Modules") && (
+                        <div className="student-view float-end">
+                            <button className="btn btn-gray">
+                                <FontAwesomeIcon className="mx-2" icon={faGlasses}></FontAwesomeIcon>
+                                <span>Student View</span>
+                            </button>
+                        </div>
+                    )}
                 </div>
                 <hr />
             </div>
