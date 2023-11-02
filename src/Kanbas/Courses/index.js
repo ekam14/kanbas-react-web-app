@@ -9,12 +9,12 @@ import Assignments from "../Assignments";
 import AssignmentEditor from "../Assignments/AssignmentEditor";
 import Grades from "../Grades";
 import Home from "../Home";
-import db from "../Database";
 
 import './styles.css'
 import React from "react";
+import {useSelector} from "react-redux";
 
-function Courses() {
+function Courses({courses}) {
     const { courseId } = useParams();
 
     let { pathname } = useLocation();
@@ -24,12 +24,13 @@ function Courses() {
     let el = pathname.split("/");
     section = section[section.length - 1]
 
-    const course = db.courses.filter((course) => course._id === courseId)[0];
-    const assignment = db.assignments.filter((assignment) => assignment._id === section)[0];
+    const course = courses.filter((course) => course._id === courseId)[0];
+    const assignments = useSelector((state) => state.assignmentsReducer.assignments)
+    const assignment = assignments.filter((assignment) => assignment._id === section)[0];
 
     if(pathname.includes("Assignments") && section !== "Assignments") {
         subsection = "Assignments";
-        section = assignment.title;
+        section = assignment ? assignment.title : "New Assignment";
         pathnameSubsection = el.slice(0, el.length - 1).join('/');
     }
 

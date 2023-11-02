@@ -61,3 +61,29 @@ input {
     border-bottom: 0.2px solid gray;
     border-right: 0.2px solid gray;
 }
+
+.add-assignment {
+    color: white;
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 30%;
+    height: 100px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+}

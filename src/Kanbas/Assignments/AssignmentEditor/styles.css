@@ -6,6 +6,16 @@
     color: #228B22;
 }
 
+.assign-to, .submission-type {
+    border: 1px solid #E5E4E2;
+}
+
+.inside-assign-to {
+    padding: 10px;
+    background-color: #F2F3F4;
+    width: 40%;
+}
+
 hr {
     clear: both;
 }
