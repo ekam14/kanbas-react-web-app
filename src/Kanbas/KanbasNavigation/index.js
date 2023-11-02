@@ -21,9 +21,9 @@ function KanbasNavigation() {
     const {pathname} = useLocation();
 
     return (
-        <div>
-            <nav className="main-navbar navbar navbar-expand-lg">
-                <div className="fluid-container">
+        <div className="d-none d-md-block">
+            <nav className="main-navbar navbar navbar-expand-md">
+                <div className="fluid-container d-flex">
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav flex-column">
                             <img className="logo" src={Image}  alt={"Northeastern"}/>

@@ -4,14 +4,16 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
 
 import './styles.css'
+import Modal from "./Modal";
 
-function Home() {
+function Home({courseNumber}) {
     return(
         <div className="row">
-            <div className="col-8">
+            <Modal courseNumber={courseNumber}/>
+            <div className="col-lg-9 col-md-9 col-sm-12 d-md-block d-sm-block">
                 <Modules />
             </div>
-            <div className="col-4">
+            <div className="col-lg-3 d-none d-lg-block">
                 <div>
                     <ul className="list-group normal-text">
                         <li className="list-group-item list-group-item-secondary list-group-item-action mb-1">

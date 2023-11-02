@@ -6,7 +6,7 @@ import './styles.css';
 
 function Modules() {
     return (
-        <div>
+        <div >
             <div>
                 <div className='modules-buttons'>
                     <button type="button" className="btn btn-light"> Collapse All</button>
