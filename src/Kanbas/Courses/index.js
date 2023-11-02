@@ -44,7 +44,8 @@ function Courses({courses}) {
     return (
         <div className="row">
             <div className="breadcrumb-div col-12">
-                <div className="justify-content-between align-items-center m-2">
+                <div className="d-none d-md-block">
+                    <div className="justify-content-between align-items-center m-2">
                     <Breadcrumb>
                         <FontAwesomeIcon className="mx-3 mt-1" icon={faBars}/>
                         <Breadcrumb.Item href="#">{course.number} FA23</Breadcrumb.Item>
@@ -67,12 +68,13 @@ function Courses({courses}) {
                     )}
                 </div>
                 <hr />
+                </div>
             </div>
             <div className="row">
-                <div className="col-2">
+                <div className="col-lg-2 col-md-3 d-none d-md-block">
                     <CourseNavigation />
                 </div>
-                <div className="col-10">
+                <div className="col-lg-10 col-md-9 col-sm-12 d-md-block d-sm-block">
                     <div
                         // className="overflow-y-scroll position-fixed bottom-0 end-0"
                         // style={{
@@ -82,7 +84,7 @@ function Courses({courses}) {
                     >
                         <Routes>
                             <Route path="/" element={<Navigate to="Home" />} />
-                            <Route path="Home" element={<Home/>} />
+                            <Route path="Home" element={<Home courseNumber={course.number}/>} />
                             <Route path="Modules" element={<Modules />} />
                             <Route path="Assignments" element={<Assignments />} />
                             <Route
