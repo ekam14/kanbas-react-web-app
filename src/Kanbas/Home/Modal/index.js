@@ -11,7 +11,6 @@ import {
 import React from "react";
 
 import './styles.css';
-import Image from "../../images/north.png";
 import {Link, useLocation} from "react-router-dom";
 
 function Modal({courseNumber}){

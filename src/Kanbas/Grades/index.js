@@ -1,6 +1,5 @@
 import {useParams} from "react-router-dom";
 
-import db from "../Database";
 import {
     faFileExport,
     faFileImport, faFilter,
@@ -15,8 +14,8 @@ import './styles.css';
 function Grades() {
     const { courseId } = useParams();
 
-    const enrollments = db.enrollments.filter((enrollment) => enrollment.course === courseId)
-    const assignments = db.assignments.filter((assignment) => assignment.course === courseId)
+    const enrollments = [].filter((enrollment) => enrollment.course === courseId) // enrollments
+    const assignments = [].filter((assignment) => assignment.course === courseId) // assignments
 
     return (
         <div>
@@ -63,12 +62,12 @@ function Grades() {
                         {assignments.map((assignment) => (<th>{assignment.title}</th>))}
                     </tr>
                     {enrollments.map((enroll) => {
-                    const user = db.users.find((user) => user._id === enroll.user)
+                    const user = [].find((user) => user._id === enroll.user) //users
                     return (
                         <tr>
                             <td>{user.firstName} {user.lastName}</td>
                             {assignments.map((assignment) => {
-                                const grade = db.grades.find((grade) =>
+                                const grade = [].find((grade) => // grades
                                     grade.student === enroll.user
                                     && grade.assignment === assignment._id
                                 );

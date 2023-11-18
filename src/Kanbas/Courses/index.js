@@ -11,11 +11,13 @@ import Grades from "../Grades";
 import Home from "../Home";
 
 import './styles.css'
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
+import axios from "axios";
 
 function Courses({courses}) {
     const { courseId } = useParams();
+    const [course, setCourse] = useState({});
 
     let { pathname } = useLocation();
     let section = pathname.split("/")
@@ -24,7 +26,15 @@ function Courses({courses}) {
     let el = pathname.split("/");
     section = section[section.length - 1]
 
-    const course = courses.filter((course) => course._id === courseId)[0];
+    const findCourseById = async (courseId) => {
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE}/courses/${courseId}`);
+        setCourse(response.data);
+    }
+
+    useEffect(() => {
+        findCourseById(courseId);
+    }, [courseId])
+
     const assignments = useSelector((state) => state.assignmentsReducer.assignments)
     const assignment = assignments.filter((assignment) => assignment._id === section)[0];
 

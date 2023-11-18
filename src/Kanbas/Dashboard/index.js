@@ -33,14 +33,14 @@ function Dashboard(
                 </button>
                 <button onClick={(event) => {
                     event.preventDefault();
-                    updateCourse();
+                    updateCourse(course);
                 }} className="btn btn-primary my-2 mx-2">
                     Update
                 </button>
             </form>
             <hr />
             <div className="m-4">
-                <p className="fs-3 fw-light">Published Courses(8)</p>
+                <p className="fs-3 fw-light">Published Courses({courses.length})</p>
                 <hr />
                 <div className="d-flex flex-wrap">
                     {courses.map((course) => (

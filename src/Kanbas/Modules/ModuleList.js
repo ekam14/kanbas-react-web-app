@@ -9,20 +9,45 @@ import {useParams} from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import {
+    setModules,
     addModule,
     deleteModule,
     updateModule,
     setModule,
 } from "./modulesReducer";
+import {useEffect} from "react";
+import * as client from "./client";
 
 function ModuleList() {
     const { courseId } = useParams();
 
-    const modules = useSelector((state) => state.modulesReducer.modules);
     const module = useSelector((state) => state.modulesReducer.module);
+    const modules = useSelector((state) => state.modulesReducer.modules);
     const dispatch = useDispatch();
 
-    const modulesForCourse = modules.filter((module) => module.course === courseId);
+    useEffect(() => {
+        client.findModulesForCourse(courseId).then((modules) => {
+            dispatch(setModules(modules));
+        });
+    }, [courseId]);
+
+    const handleAddModule = (courseId, module) => {
+        client.createModule(courseId, module).then((module) => {
+            dispatch(addModule(module));
+        })
+    }
+
+    const handleDeleteModule = (moduleId) => {
+        client.deleteModuleForCourse(moduleId).then(() => {
+            dispatch(deleteModule(moduleId));
+        })
+    }
+
+    const handleUpdateModule = (module) => {
+        client.updateModuleForCourse(module).then(() => {
+            dispatch(updateModule(module))
+        })
+    }
 
     return (
         <div>
@@ -34,18 +59,18 @@ function ModuleList() {
                               onChange={(e) => dispatch(setModule({...module, description: e.target.value}))}/>
                     <button onClick={(event) => {
                         event.preventDefault();
-                        dispatch(addModule({...module, course: courseId}))
+                        handleAddModule(courseId, module);
                     }} className="btn btn-success">
                         Add
                     </button>
                     <button onClick={(event) => {
                         event.preventDefault();
-                        dispatch(updateModule(module))
+                        handleUpdateModule(module)
                     }} className="btn btn-primary my-2 mx-2">
                         Update
                     </button>
                 </div>
-                {modulesForCourse.map((module, index) => (
+                {modules.map((module, index) => (
                     <div key={index} className="module-div">
                         <li key={index} className="list-group-item list-group-item-action">
                             <FontAwesomeIcon icon={faEllipsisVertical} />
@@ -67,7 +92,7 @@ function ModuleList() {
                                 <button className="btn btn-danger"
                                         onClick={(event) => {
                                             event.preventDefault();
-                                            dispatch(deleteModule(module._id))
+                                            handleDeleteModule(module._id)
                                         }}>
                                     Delete
                                 </button>

@@ -8,6 +8,8 @@ import './styles.css'
 import { useSelector, useDispatch } from "react-redux";
 import {addAssignment, setAssignment, updateAssignment} from "../assignmentsReducer";
 
+import * as client from "../client";
+
 function AssignmentEditor(){
     const { courseId } = useParams();
     const { assignmentId } = useParams();
@@ -16,15 +18,17 @@ function AssignmentEditor(){
     const assignment = useSelector((state) => state.assignmentsReducer.assignment);
     const dispatch = useDispatch();
 
-    const handleSave = () => {
+    const handleSave = async () => {
         console.log("Saving assignment data.");
         if(assignmentId === "-1") {
-            console.log("Adding new assignment.")
-            const _assignment = {...assignment, course: courseId};
-            dispatch(addAssignment(_assignment))
+            await client.createAssignment(courseId, assignment).then((assignment) => {
+                dispatch(addAssignment(assignment));
+            });
         } else {
-            console.log("Updating assignment.")
-            dispatch(updateAssignment(assignment));
+            await client.updateAssignmentForCourse(assignment).then(() => {
+                dispatch(updateAssignment(assignment));
+                console.log(assignment);
+            })
         }
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     }

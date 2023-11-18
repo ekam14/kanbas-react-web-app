@@ -1,25 +1,37 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Link, useParams } from "react-router-dom";
 import {faBook, faCircleCheck, faEllipsisV, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import './styles.css';
 import {useDispatch, useSelector} from "react-redux";
-import {deleteAssignment, setAssignment} from "./assignmentsReducer";
+import {setAssignments, deleteAssignment, setAssignment} from "./assignmentsReducer";
+
+import * as client from "./client";
 
 function Assignments() {
     const { courseId } = useParams();
     const dispatch = useDispatch();
     const assignments = useSelector((state) => state.assignmentsReducer.assignments)
-    const courseAssignments = assignments.filter(
-        (assignment) => assignment.course === courseId);
 
     const [ showPopup, setPopUp ] = useState(false);
     const [ assignmentId, setAssignmentId ] = useState(-1);
 
+    useEffect(() => {
+        client.findAssignmentsForCourse(courseId).then((assignments) => {
+            dispatch(setAssignments(assignments));
+        })
+    }, [courseId]);
+
     const handleClose = () => {
         setAssignmentId(-1);
         setPopUp(false);
+    }
+
+    const handleDeleteAssignment = (assignmentId) => {
+        client.deleteAssignmentsForCourse(assignmentId).then(() => {
+            dispatch(deleteAssignment(assignmentId));
+        })
     }
 
     return (
@@ -33,7 +45,7 @@ function Assignments() {
                       <div>
                           <button className="btn btn-danger mx-2"
                                   onClick={() => {
-                                      dispatch(deleteAssignment(assignmentId));
+                                      handleDeleteAssignment(assignmentId);
                                       handleClose();
                                     }
                                   }>
@@ -79,7 +91,7 @@ function Assignments() {
                 </div>
                 <div className="assignments-section">
                     <ul className="list-group">
-                        {courseAssignments.map((assignment, index) => (
+                        {assignments.map((assignment, index) => (
                             <div key={index} className="list-group-item assignment-div">
                                 <div className="row">
                                     <div className="col-1 mt-4">
