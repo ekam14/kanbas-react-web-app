@@ -43,7 +43,7 @@ function WorkingWithArrays() {
 
     const deleteTodo = async (todo) => {
         try {
-            const response = await axios.delete(
+            await axios.delete(
                 `${API}/${todo.id}`);
             setTodos(todos.filter((t) => t.id !== todo.id));
         } catch (error) {
@@ -54,7 +54,7 @@ function WorkingWithArrays() {
 
     const updateTodo = async () => {
         try {
-            const response = await axios.put(
+            await axios.put(
                 `${API}/${todo.id}`, todo);
             setTodos(todos.map((t) => (
                 t.id === todo.id ? todo : t)));
@@ -63,9 +63,7 @@ function WorkingWithArrays() {
             console.log(error);
             setErrorMessage(error.response.data.message);
         }
-
     };
-
 
     useEffect(() => {
         fetchTodos();
