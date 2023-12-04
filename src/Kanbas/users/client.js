@@ -2,6 +2,9 @@ import axios from "axios";
 export const BASE_API = process.env.REACT_APP_API_BASE;
 export const USERS_API = `${BASE_API}/users`;
 
+console.log(process.env.REACT_APP_API_BASE)
+console.log(USERS_API);
+
 const request = axios.create({
     withCredentials: true
 })
